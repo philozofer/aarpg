@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df3gxvu0ax0"
-path="res://.godot/imported/dungeon.png-2922ce75f85d393595428b44bf1167e9.ctex"
+uid="uid://caqwsd3ubpvoo"
+path="res://.godot/imported/boomerang.png-5047791a9aed2b7253480a08a413beae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dungeon.png"
-dest_files=["res://.godot/imported/dungeon.png-2922ce75f85d393595428b44bf1167e9.ctex"]
+source_file="res://assets/objects/boomerang.png"
+dest_files=["res://.godot/imported/boomerang.png-5047791a9aed2b7253480a08a413beae.ctex"]
 
 [params]
 

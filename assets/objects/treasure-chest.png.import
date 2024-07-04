@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1gnaj04sp0ro"
-path="res://.godot/imported/Grass-01.png-884ee061139f4b4734915dbb75eb4cd5.ctex"
+uid="uid://diwnel70ui2m1"
+path="res://.godot/imported/treasure-chest.png-ec2357c45555aa84d3f24c76cdcf54b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Grass-01.png"
-dest_files=["res://.godot/imported/Grass-01.png-884ee061139f4b4734915dbb75eb4cd5.ctex"]
+source_file="res://assets/objects/treasure-chest.png"
+dest_files=["res://.godot/imported/treasure-chest.png-ec2357c45555aa84d3f24c76cdcf54b5.ctex"]
 
 [params]
 

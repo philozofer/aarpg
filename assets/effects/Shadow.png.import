@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diqh3j7bn47mc"
-path="res://.godot/imported/dungeon_props.png-714a11ba66ff73a84d6f767c55c17256.ctex"
+uid="uid://dupbew18scob0"
+path="res://.godot/imported/Shadow.png-a177520dc6c72ef53c409e7f58d75b06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dungeon_props.png"
-dest_files=["res://.godot/imported/dungeon_props.png-714a11ba66ff73a84d6f767c55c17256.ctex"]
+source_file="res://assets/effects/Shadow.png"
+dest_files=["res://.godot/imported/Shadow.png-a177520dc6c72ef53c409e7f58d75b06.ctex"]
 
 [params]
 

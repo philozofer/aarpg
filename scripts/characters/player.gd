@@ -13,16 +13,16 @@ func _ready():
 	state_machine.initialize(self)
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	direction.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+func _process(delta):	
+	direction = Vector2(
+		Input.get_axis("move_left", "move_right"),
+		Input.get_axis("move_up", "move_down")
+	).normalized()
 	pass
 	
 func _physics_process(delta):
-	move_and_slide()
-	
+	move_and_slide()	
 	
 func setDirection() -> bool:
 	var new_dir: Vector2 = cardinal_direction

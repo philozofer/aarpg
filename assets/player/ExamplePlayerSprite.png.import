@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caqwsd3ubpvoo"
-path="res://.godot/imported/boomerang.png-5770895f30dcfac709d84d56a16af681.ctex"
+uid="uid://xoxy7i3ohqmw"
+path="res://.godot/imported/ExamplePlayerSprite.png-a6c4da65c7bfcd397418198756b6b62d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/boomerang.png"
-dest_files=["res://.godot/imported/boomerang.png-5770895f30dcfac709d84d56a16af681.ctex"]
+source_file="res://assets/player/ExamplePlayerSprite.png"
+dest_files=["res://.godot/imported/ExamplePlayerSprite.png-a6c4da65c7bfcd397418198756b6b62d.ctex"]
 
 [params]
 
