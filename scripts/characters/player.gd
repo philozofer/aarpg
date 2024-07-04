@@ -14,14 +14,14 @@ func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):	
+func _process(_delta):	
 	direction = Vector2(
 		Input.get_axis("move_left", "move_right"),
 		Input.get_axis("move_up", "move_down")
 	).normalized()
 	pass
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	move_and_slide()	
 	
 func setDirection() -> bool:
@@ -42,8 +42,7 @@ func setDirection() -> bool:
 	return true
 	
 func updateAnimation(state: String) -> void:
-	animation_player.play(state + "_" + animDirection())
-	pass
+	animation_player.play(state + "_" + animDirection())	
 
 func animDirection() -> String:
 	if cardinal_direction == Vector2.DOWN:
