@@ -7,7 +7,7 @@ class_name State_Walk extends State
 
 ## What happens when the player enters this State ?
 func enter() -> void:
-	player.updateAnimation("idle")
+	player.updateAnimation("walk")
 	pass
 	
 ## What happens when the player exits this State ?

@@ -33,10 +33,10 @@ func initialize(_player: Player) -> void:
 		process_mode = Node.PROCESS_MODE_INHERIT
 	return
 
-func changeState(new_state: State) -> void:
+func changeState(new_state: State) -> void:	
 	if new_state == null || new_state == current_state:
 		return
-		
+				
 	if current_state:
 		current_state.exit()
 	
