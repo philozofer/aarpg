@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c5vxwulyabudy"]
+[gd_scene load_steps=29 format=3 uid="uid://c5vxwulyabudy"]
 
 [ext_resource type="Script" path="res://scripts/characters/player.gd" id="1_me7w7"]
 [ext_resource type="Texture2D" uid="uid://bh0akg7qfq4ou" path="res://assets/player/PlayerSprite02.png" id="2_wfmjo"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/characters/state_walk.gd" id="5_425th"]
 [ext_resource type="Script" path="res://scripts/characters/state_attack.gd" id="6_hpu3o"]
 [ext_resource type="AudioStream" uid="uid://btv58ot6yc013" path="res://assets/sounds/SwordSwoosh.wav" id="8_swx4e"]
+[ext_resource type="Script" path="res://scripts/characters/player_camera.gd" id="10_us4rv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qsxn"]
 
@@ -465,6 +466,8 @@ attack_sound = ExtResource("8_swx4e")
 decelerate_speed = 5.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
+editor_draw_limits = true
+script = ExtResource("10_us4rv")
 
 [node name="Audio" type="Node2D" parent="."]
 
