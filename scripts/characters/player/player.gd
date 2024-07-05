@@ -25,7 +25,7 @@ func _process(_delta):
 func _physics_process(_delta):
 	move_and_slide()	
 	
-func setDirection() -> bool:	
+func set_direction() -> bool:	
 	if direction == Vector2.ZERO:
 		return false
 	
@@ -39,10 +39,10 @@ func setDirection() -> bool:
 	sprite.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
 	return true
 	
-func updateAnimation(state: String) -> void:
-	animation_player.play(state + "_" + animDirection())	
+func update_animation(state: String) -> void:
+	animation_player.play(state + "_" + anim_direction())	
 
-func animDirection() -> String:
+func anim_direction() -> String:
 	if cardinal_direction == Vector2.DOWN:
 		return "down"
 	elif cardinal_direction == Vector2.UP:

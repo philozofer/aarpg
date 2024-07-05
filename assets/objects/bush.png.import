@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diwnel70ui2m1"
-path="res://.godot/imported/treasure-chest.png-ec2357c45555aa84d3f24c76cdcf54b5.ctex"
+uid="uid://c1688flvf2cxa"
+path="res://.godot/imported/bush.png-d2a1a70f350f4928ff7b304371337694.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objects/treasure-chest.png"
-dest_files=["res://.godot/imported/treasure-chest.png-ec2357c45555aa84d3f24c76cdcf54b5.ctex"]
+source_file="res://assets/objects/bush.png"
+dest_files=["res://.godot/imported/bush.png-d2a1a70f350f4928ff7b304371337694.ctex"]
 
 [params]
 
