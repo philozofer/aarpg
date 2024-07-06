@@ -1,16 +1,16 @@
 class_name Player extends CharacterBody2D
 
-var cardinal_direction: Vector2 = Vector2.DOWN
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
+var cardinal_direction: Vector2 = Vector2.DOWN
 var direction: Vector2 = Vector2.ZERO
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
-@onready var state_machine: PlayerStateMachine = $StateMachine
-
+@onready var state_machine: PlayerStateMachine = $PlayerStateMachine
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	PlayerManager.player = self
 	state_machine.initialize(self)
 	pass # Replace with function body.
 

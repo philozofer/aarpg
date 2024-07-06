@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bh0akg7qfq4ou" path="res://assets/player/PlayerSprite02.png" id="2_wfmjo"]
 [ext_resource type="Texture2D" uid="uid://be7mkm2cq4lf7" path="res://assets/player/AttackSprite01.png" id="3_0nq5r"]
 [ext_resource type="Texture2D" uid="uid://dupbew18scob0" path="res://assets/effects/Shadow.png" id="4_8yx60"]
-[ext_resource type="Script" path="res://scripts/characters/player/state_machine.gd" id="5_i2jo4"]
-[ext_resource type="Script" path="res://scripts/characters/player/state_idle.gd" id="6_gjysg"]
-[ext_resource type="Script" path="res://scripts/characters/player/state_walk.gd" id="7_1mhgy"]
-[ext_resource type="Script" path="res://scripts/characters/player/state_attack.gd" id="8_qyw2a"]
+[ext_resource type="Script" path="res://scripts/characters/player/states/player_state_machine.gd" id="5_i2jo4"]
+[ext_resource type="Script" path="res://scripts/characters/player/states/player_state_idle.gd" id="6_gjysg"]
+[ext_resource type="Script" path="res://scripts/characters/player/states/player_state_walk.gd" id="7_1mhgy"]
+[ext_resource type="Script" path="res://scripts/characters/player/states/player_state_attack.gd" id="8_qyw2a"]
 [ext_resource type="AudioStream" uid="uid://btv58ot6yc013" path="res://assets/sounds/SwordSwoosh.wav" id="8_swx4e"]
 [ext_resource type="Script" path="res://scripts/characters/player/player_camera.gd" id="10_wj770"]
 
@@ -451,16 +451,16 @@ libraries = {
 "": SubResource("AnimationLibrary_c2t0f")
 }
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource("5_i2jo4")
 
-[node name="Idle" type="Node" parent="StateMachine"]
+[node name="Idle" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("6_gjysg")
 
-[node name="Walk" type="Node" parent="StateMachine"]
+[node name="Walk" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("7_1mhgy")
 
-[node name="Attack" type="Node" parent="StateMachine"]
+[node name="Attack" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("8_qyw2a")
 attack_sound = ExtResource("8_swx4e")
 decelerate_speed = 5.0
