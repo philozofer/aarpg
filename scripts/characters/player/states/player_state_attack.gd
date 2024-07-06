@@ -11,7 +11,7 @@ var attacking: bool = false
 
 @onready var walk: State = $"../Walk"
 @onready var idle: State = $"../Idle"
-
+@onready var hurt_box: HurtBox = %AttackHurtBox
 
 ## What happens when the player enters this State ?
 func enter() -> void:
@@ -21,13 +21,18 @@ func enter() -> void:
 	audio.stream = attack_sound
 	audio.pitch_scale = randf_range(0.9, 1.1)
 	audio.play()
+	
 	attacking = true
+	
+	await get_tree().create_timer(0.075).timeout
+	hurt_box.monitoring = true
 	pass
 	
 ## What happens when the player exits this State ?
 func exit() -> void:
 	animation_player.animation_finished.disconnect(end_attack)
 	attacking = false
+	hurt_box.monitoring = false
 	pass
 
 ## What happens during the _physics_process in this State ?
