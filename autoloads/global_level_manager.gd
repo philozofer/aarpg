@@ -15,10 +15,12 @@ var position_offset: Vector2
 func _ready():
 	await get_tree().process_frame
 	level_loaded.emit()
+	
 
 func changeTilemapBounds(bounds: Array[Vector2]) -> void:
 	current_tilemap_bounds = bounds
 	TileMapBoundsChanged.emit(bounds)
+	
 
 func load_new_level(
 	level_path: String,
@@ -30,7 +32,7 @@ func load_new_level(
 	target_transition = _target_transition
 	position_offset = _postition_offset
 	
-	await get_tree().process_frame # Level Transition (effects)
+	await SceneTransition.fade_out() # Level Transition (effects)
 	
 	level_load_started.emit()
 	
@@ -38,7 +40,7 @@ func load_new_level(
 	
 	get_tree().change_scene_to_file(level_path)
 	
-	await get_tree().process_frame # Level Transition (effects)
+	await SceneTransition.fade_in() # Level Transition (effects)
 	
 	get_tree().paused = false
 	
