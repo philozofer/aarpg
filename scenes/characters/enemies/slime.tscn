@@ -739,6 +739,7 @@ shape = SubResource("CircleShape2D_ryhgo")
 debug_color = Color(0.591449, 0.619247, 9.62615e-07, 0.42)
 
 [node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(0.43675, 0.319735, 0.070949, 1)
 texture = ExtResource("1_5b4dj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

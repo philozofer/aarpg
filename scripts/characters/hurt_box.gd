@@ -4,14 +4,14 @@ class_name HurtBox extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():	
-	area_entered.connect(AreaEntered)
+	area_entered.connect(_area_entered)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
 
-func AreaEntered(area: Area2D) -> void:
+func _area_entered(area: Area2D) -> void:
 	if area is HitBox:
-		area.take_damage(damage)
+		area.take_damage(self)
 	pass
