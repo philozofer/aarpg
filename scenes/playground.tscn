@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://w3j42lklqu04"]
+[gd_scene load_steps=4 format=3 uid="uid://w3j42lklqu04"]
 
 [ext_resource type="PackedScene" uid="uid://c5vxwulyabudy" path="res://scenes/characters/player.tscn" id="1_264xi"]
 [ext_resource type="PackedScene" uid="uid://cu3fp0yjpylx1" path="res://assets/tilemaps/grass-01.tscn" id="2_tr6xt"]
 [ext_resource type="PackedScene" uid="uid://of5y0fkf67qs" path="res://scenes/characters/enemies/slime.tscn" id="3_6rf6r"]
-[ext_resource type="PackedScene" uid="uid://bhcrxni5j5hcs" path="res://scenes/objects/plant.tscn" id="4_m3u8v"]
 
 [node name="Playground" type="Node2D"]
 y_sort_enabled = true
@@ -16,14 +15,3 @@ layer_0/tile_data = PackedInt32Array(0, 65536, 2, 65536, 65536, 2, 131072, 65536
 
 [node name="Slime" parent="." instance=ExtResource("3_6rf6r")]
 position = Vector2(124, 172)
-
-[node name="Plant" parent="." instance=ExtResource("4_m3u8v")]
-
-[node name="Plant2" parent="." instance=ExtResource("4_m3u8v")]
-position = Vector2(287, -28)
-
-[node name="Plant3" parent="." instance=ExtResource("4_m3u8v")]
-position = Vector2(101, 223)
-
-[node name="Plant4" parent="." instance=ExtResource("4_m3u8v")]
-position = Vector2(357, 238)
