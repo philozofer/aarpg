@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlyj87jvi4ugw"]
+[gd_scene load_steps=7 format=3 uid="uid://dlyj87jvi4ugw"]
 
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_knj71"]
 [ext_resource type="PackedScene" uid="uid://cu3fp0yjpylx1" path="res://assets/tilemaps/grass-01.tscn" id="2_p8hlx"]
 [ext_resource type="PackedScene" uid="uid://of5y0fkf67qs" path="res://scenes/characters/enemies/slime.tscn" id="3_exo65"]
 [ext_resource type="PackedScene" uid="uid://doku2rqdjmkv3" path="res://scenes/levels/player_spawn.tscn" id="3_wsi6n"]
 [ext_resource type="PackedScene" uid="uid://cxmgl43fpgqqx" path="res://scenes/levels/level_transition.tscn" id="5_ilf6u"]
+[ext_resource type="PackedScene" uid="uid://bhcrxni5j5hcs" path="res://scenes/objects/plant.tscn" id="6_jlabv"]
 
 [node name="Playground" type="Node2D"]
 y_sort_enabled = true
@@ -33,3 +34,8 @@ position = Vector2(224, 448)
 level = "res://scenes/levels/Area1/level1.tscn"
 size = 3
 side = 3
+
+[node name="Plant" parent="." instance=ExtResource("6_jlabv")]
+
+[node name="Plant2" parent="." instance=ExtResource("6_jlabv")]
+position = Vector2(163, 377)
