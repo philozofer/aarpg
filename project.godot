@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="aarpg"
-run/main_scene="res://scenes/playground.tscn"
+run/main_scene="res://scenes/levels/playground.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 LevelManager="*res://autoloads/global_level_manager.gd"
 PlayerManager="*res://autoloads/global_player_manager.gd"
+PlayerHud="*res://scenes/ui/player_hud.tscn"
 
 [display]
 
