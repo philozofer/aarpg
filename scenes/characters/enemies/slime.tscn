@@ -139,6 +139,18 @@ tracks/5/keys = {
 "clips": PackedStringArray("[stop]", "destroy"),
 "times": PackedFloat32Array(0, 0.0001)
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Shadow:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.435294, 0.321569, 0.0705882, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_qy3ub"]
 resource_name = "destroy_side"
@@ -219,6 +231,18 @@ tracks/5/keys = {
 "clips": PackedStringArray("destroy"),
 "times": PackedFloat32Array(0)
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Shadow:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.435294, 0.321569, 0.0705882, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_3qqwv"]
 resource_name = "destroy_up"
@@ -298,6 +322,18 @@ tracks/5/loop_wrap = true
 tracks/5/keys = {
 "clips": PackedStringArray("destroy"),
 "times": PackedFloat32Array(0)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Shadow:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.435294, 0.321569, 0.0705882, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_73m6e"]
@@ -724,13 +760,6 @@ collision_layer = 256
 collision_mask = 16
 script = ExtResource("1_j4afb")
 
-[node name="HitBox" parent="." instance=ExtResource("2_kiemy")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(0, -8)
-shape = SubResource("CircleShape2D_ryhgo")
-debug_color = Color(0.712165, 0.100335, 0, 0.42)
-
 [node name="HurtBox" parent="." instance=ExtResource("7_32u3v")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
@@ -738,8 +767,15 @@ position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_ryhgo")
 debug_color = Color(0.591449, 0.619247, 9.62615e-07, 0.42)
 
+[node name="HitBox" parent="." instance=ExtResource("2_kiemy")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_ryhgo")
+debug_color = Color(0.712165, 0.100335, 0, 0.42)
+
 [node name="Shadow" type="Sprite2D" parent="."]
-self_modulate = Color(0.43675, 0.319735, 0.070949, 1)
+self_modulate = Color(0.508086, 0.319792, 0.0333433, 1)
 texture = ExtResource("1_5b4dj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
