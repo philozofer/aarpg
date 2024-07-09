@@ -22,6 +22,7 @@ var current_save : Dictionary = {
 func save_game() -> void:
 	update_player_data()
 	update_scene_path()
+	update_item_data()
 	var file := FileAccess.open(SAVE_PATH + "save.sav", FileAccess.WRITE)
 	var save_json = JSON.stringify(current_save)
 	file.store_line(save_json)
@@ -67,11 +68,6 @@ func update_scene_path() -> void:
 	current_save.scene_path = p
 	pass
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func update_item_data() -> void:
+	current_save.items = PlayerManager.INVENTORY_DATA.get_save_data()
 	pass
