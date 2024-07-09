@@ -1,6 +1,8 @@
 extends Node
 
 const PLAYER = preload("res://scenes/characters/player.tscn")
+const INVENTORY_DATA: InventoryData = preload("res://scenes/ui/inventory/player_inventory.tres")
+
 
 var player: Player 
 var player_spawned: bool = false
@@ -23,8 +25,7 @@ func set_player_health(hp: int, max_hp: int ) -> void:
 	player.update_hp(0)
 
 func set_player_position(_new_pos: Vector2) -> void:
-	player.global_position = _new_pos
-	
+	player.global_position = _new_pos	
 
 
 func set_as_parent(_p: Node2D) -> void:
