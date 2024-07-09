@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://c5vxwulyabudy"]
+[gd_scene load_steps=44 format=3 uid="uid://c5vxwulyabudy"]
 
 [ext_resource type="Script" path="res://scripts/characters/player/player.gd" id="1_u4pvk"]
 [ext_resource type="Texture2D" uid="uid://bh0akg7qfq4ou" path="res://assets/player/PlayerSprite02.png" id="2_wfmjo"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cr82p0fbiequb" path="res://scenes/characters/hurt_box.tscn" id="11_40kyp"]
 [ext_resource type="Script" path="res://scripts/characters/player/states/player_state_stun.gd" id="11_mr874"]
 [ext_resource type="PackedScene" uid="uid://s6tn27nqct0c" path="res://scenes/characters/hit_box.tscn" id="12_kfn3s"]
+[ext_resource type="Script" path="res://scripts/characters/player/player_interactions_manager.gd" id="13_75xy4"]
 [ext_resource type="AudioStream" uid="uid://cc48mog66i3qy" path="res://assets/sounds/hit_player.wav" id="13_l1la6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qsxn"]
@@ -518,6 +519,8 @@ _data = {
 "walk_up": SubResource("Animation_co541")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dqmy"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_mh4x5"]
 
 [sub_resource type="Animation" id="Animation_ncgam"]
@@ -644,7 +647,6 @@ script = ExtResource("6_gjysg")
 
 [node name="Walk" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("7_1mhgy")
-move_speed = null
 
 [node name="Attack" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("8_qyw2a")
@@ -664,6 +666,17 @@ script = ExtResource("10_wj770")
 max_polyphony = 5
 
 [node name="Interactions" type="Node2D" parent="."]
+script = ExtResource("13_75xy4")
+
+[node name="Area2D" type="Area2D" parent="Interactions"]
+position = Vector2(0, 6)
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Area2D"]
+shape = SubResource("RectangleShape2D_7dqmy")
+debug_color = Color(0, 0.713726, 0, 0.760784)
 
 [node name="HitBox" parent="." instance=ExtResource("12_kfn3s")]
 collision_layer = 2
