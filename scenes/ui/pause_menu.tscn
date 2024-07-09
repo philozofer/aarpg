@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bf6fosntdpnse"]
+[gd_scene load_steps=8 format=3 uid="uid://bf6fosntdpnse"]
 
 [ext_resource type="Script" path="res://scripts/ui/pause_menu.gd" id="1_kw02c"]
 [ext_resource type="Texture2D" uid="uid://c4xiug817xu7j" path="res://assets/objects/items.png" id="2_qgakb"]
+[ext_resource type="Script" path="res://scripts/inventory/inventory_ui.gd" id="3_mjtgd"]
 [ext_resource type="PackedScene" uid="uid://blywydhtdg4m5" path="res://scenes/ui/inventory/inventory_slot.tscn" id="3_ukxen"]
+[ext_resource type="Resource" uid="uid://dedtekgx6l81u" path="res://scenes/ui/inventory/player_inventory.tres" id="4_wsr6x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjcmj"]
 atlas = ExtResource("2_qgakb")
@@ -52,7 +54,24 @@ offset_bottom = 39.0
 grow_horizontal = 2
 text = "[ PAUSED ]"
 
+[node name="ItemDescription" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -101.0
+offset_top = 167.0
+offset_right = 95.0
+offset_bottom = 190.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 11
+text = "This red drink restores your health !"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 0
 offset_left = 139.0
 offset_top = 72.0
 offset_right = 335.0
@@ -62,6 +81,8 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_mj0ih")
 [node name="GridContainer" type="GridContainer" parent="Control/PanelContainer"]
 layout_mode = 2
 columns = 5
+script = ExtResource("3_mjtgd")
+data = ExtResource("4_wsr6x")
 
 [node name="InventorySlot" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_ukxen")]
 layout_mode = 2

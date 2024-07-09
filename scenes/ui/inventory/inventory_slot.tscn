@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://blywydhtdg4m5"]
+[gd_scene load_steps=4 format=3 uid="uid://blywydhtdg4m5"]
 
 [ext_resource type="Texture2D" uid="uid://c4xiug817xu7j" path="res://assets/objects/items.png" id="1_6qvri"]
+[ext_resource type="Script" path="res://scripts/inventory/inventory_slot_ui.gd" id="1_esnfm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4rhak"]
 atlas = ExtResource("1_6qvri")
@@ -15,6 +16,7 @@ offset_right = -448.0
 offset_bottom = -238.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_esnfm")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(32, 32)
