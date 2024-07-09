@@ -64,3 +64,24 @@ func item_to_save(slot: SlotData) -> Dictionary:
 			result.item = slot.item_data.resource_path
 			
 	return result
+	
+
+func  parse_save_data(save_data: Array) -> void:
+	var array_size = slots.size()
+	slots.clear()
+	slots.resize(array_size)
+	
+	for i in save_data.size():
+		slots[i] = item_from_save(save_data[i])
+		
+	connect_slots()
+	
+
+func item_from_save(save_object: Dictionary) -> SlotData:
+	if save_object.item == "":
+		return null
+		
+	var new_slot: SlotData = SlotData.new()
+	new_slot.item_data = load(save_object.item)
+	new_slot.quantity = int (save_object.quantity)	
+	return new_slot

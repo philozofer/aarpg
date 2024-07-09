@@ -44,7 +44,8 @@ func load_game() -> void:
 	
 	PlayerManager.set_player_position(Vector2(current_save.player.pos_x,current_save.player.pos_y))
 	PlayerManager.set_player_health(current_save.player.hp, current_save.player.max_hp)
-	
+	PlayerManager.INVENTORY_DATA.parse_save_data(current_save.items)	
+		
 	await LevelManager.level_loaded
 	
 	game_loaded.emit()
