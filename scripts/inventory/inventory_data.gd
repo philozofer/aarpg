@@ -1,6 +1,12 @@
 class_name InventoryData extends Resource
 
+
 @export var slots: Array[SlotData]
+
+
+func _init()->void:
+	connect_slots()
+	pass
 
 func add_item(item: ItemData, qty: int = 1) -> bool:
 	for s in slots:
@@ -15,7 +21,27 @@ func add_item(item: ItemData, qty: int = 1) -> bool:
 			new.item_data = item
 			new.quantity = qty
 			slots[i] = new
+			new.changed.connect(slot_changed)
 			return true	
 	
 	print("Inventory was full")
 	return false
+
+
+
+func connect_slots() -> void:
+	for s in slots:
+		if s:
+			s.changed.connect(slot_changed)
+	pass
+	
+
+func slot_changed() -> void:
+	for s in slots:
+		if s:
+			if s.quantity < 1:
+				s.changed.disconnect(slot_changed)
+				var index = slots.find(s)
+				slots[index] = null
+				emit_changed()
+	pass

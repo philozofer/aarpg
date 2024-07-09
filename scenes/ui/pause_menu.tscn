@@ -65,7 +65,6 @@ offset_right = 95.0
 offset_bottom = 190.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 11
-text = "This red drink restores your health !"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -121,3 +120,6 @@ text = "Save"
 [node name="Button_Load" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 text = "Load"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+max_polyphony = 4
