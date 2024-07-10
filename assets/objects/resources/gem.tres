@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://bfwcr3xry2cut"]
+
+[ext_resource type="Script" path="res://scripts/inventory/item_data.gd" id="1_bv5io"]
+[ext_resource type="Texture2D" uid="uid://c4xiug817xu7j" path="res://assets/objects/items.png" id="2_r1ywp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag48a"]
+atlas = ExtResource("2_r1ywp")
+region = Rect2(0, 0, 32, 32)
+
+[resource]
+script = ExtResource("1_bv5io")
+name = ""
+description = "A valuable stone"
+texture = SubResource("AtlasTexture_ag48a")
+effects = Array[Resource("res://scripts/objects/item_effects/item_effect.gd")]([])
