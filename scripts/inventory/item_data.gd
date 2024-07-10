@@ -4,10 +4,8 @@ class_name ItemData extends Resource
 @export_multiline var description: String = ""
 @export var texture: Texture2D
 
-
 @export_category("ItemUseEffects")
 @export var effects: Array[ItemEffect]
-
 
 
 func use() -> bool:

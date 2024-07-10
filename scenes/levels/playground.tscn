@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dlyj87jvi4ugw"]
+[gd_scene load_steps=15 format=3 uid="uid://dlyj87jvi4ugw"]
 
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_knj71"]
 [ext_resource type="PackedScene" uid="uid://cu3fp0yjpylx1" path="res://assets/tilemaps/grass-01.tscn" id="2_p8hlx"]
@@ -11,12 +11,11 @@
 [ext_resource type="Resource" uid="uid://crnjwdxnw3p3g" path="res://assets/objects/potion.tres" id="9_uojiv"]
 [ext_resource type="Resource" uid="uid://dt75q34pwfel2" path="res://assets/objects/apple.tres" id="9_ydngy"]
 [ext_resource type="PackedScene" uid="uid://bs5cgmjsk2wfb" path="res://scenes/objects/sign_post.tscn" id="11_p08pf"]
-[ext_resource type="PackedScene" uid="uid://dxif0c8fhwv7i" path="res://scenes/characters/interact_with_player.tscn" id="12_6xowk"]
-[ext_resource type="Script" path="res://scripts/characters/player/interact_with_player.gd" id="13_fd5vd"]
+[ext_resource type="PackedScene" uid="uid://dxif0c8fhwv7i" path="res://scenes/characters/add_dialogue_to.tscn" id="12_6xowk"]
 [ext_resource type="Resource" uid="uid://dsvn2ef44r510" path="res://dialogues/maps/north_post.dialogue" id="14_w6guc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1lnu"]
-size = Vector2(34, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3gtj"]
+size = Vector2(33, 22)
 
 [node name="Playground" type="Node2D"]
 y_sort_enabled = true
@@ -70,10 +69,9 @@ quantity = 10
 position = Vector2(179, 257)
 
 [node name="Interaction" parent="SignPost" instance=ExtResource("12_6xowk")]
-script = ExtResource("13_fd5vd")
 dialogue_resource = ExtResource("14_w6guc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SignPost/Interaction"]
-position = Vector2(0, 8)
-shape = SubResource("RectangleShape2D_w1lnu")
-debug_color = Color(0, 0.741176, 0.0627451, 0.419608)
+position = Vector2(-0.5, 8)
+shape = SubResource("RectangleShape2D_i3gtj")
+debug_color = Color(0, 0.847059, 0.27451, 0.419608)
