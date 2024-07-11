@@ -1,6 +1,5 @@
 extends Node
 
-
 const DialogueConstants = preload("./constants.gd")
 const Builtins = preload("./utilities/builtins.gd")
 const DialogueSettings = preload("./settings.gd")
@@ -11,6 +10,8 @@ const DialogueManagerParser = preload("./components/parser.gd")
 const DialogueManagerParseResult = preload("./components/parse_result.gd")
 const ResolvedLineData = preload("./components/resolved_line_data.gd")
 
+## Emitted when a quest has been accepted through dialogue attached with a quest resource
+signal quest_accepted(quest)
 
 ## Emitted when a title is encountered while traversing dialogue, usually when jumping from a
 ## goto line
@@ -89,6 +90,11 @@ func _ready() -> void:
 	if DialogueSettings.check_for_dotnet_solution():
 		_get_dotnet_dialogue_manager().Prepare()
 
+
+## Accept quest through dialogue and emits a signal to update quest status
+func accept_quest(quest):	
+	emit_signal("quest_accepted", quest)
+		# Update quest status in QuestManager or other relevant system
 
 ## Step through lines and run any mutations until we either hit some dialogue or the end of the conversation
 func get_next_dialogue_line(resource: DialogueResource, key: String = "", extra_game_states: Array = [], mutation_behaviour: MutationBehaviour = MutationBehaviour.Wait) -> DialogueLine:

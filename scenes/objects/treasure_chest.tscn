@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://h507omgrjn67"]
+[gd_scene load_steps=14 format=3 uid="uid://b20y5yotli76r"]
 
 [ext_resource type="Script" path="res://scripts/objects/treasure_chest.gd" id="1_gr0a1"]
 [ext_resource type="Texture2D" uid="uid://diwnel70ui2m1" path="res://assets/objects/treasure_chest.png" id="2_64ckp"]

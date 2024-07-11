@@ -24,6 +24,15 @@ SceneTransition="*res://scenes/ui/scene_transition.tscn"
 SaveManager="*res://autoloads/global_save_manager.gd"
 PauseMenu="*res://scenes/ui/pause_menu.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+QuestManager="res://autoloads/global_quests_manager.gd"
+QuestSystem="*res://addons/quest_system/quest_manager.gd"
+QuestStates="*res://autoloads/global_quests_states.gd"
+Shortcuts="*res://autoloads/global_quests_shortcuts.gd"
+
+[dialogue_manager]
+
+general/balloon_path="res://dialogues/balloon.tscn"
+general/states=["QuestStates"]
 
 [display]
 
@@ -35,7 +44,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/quest_system/plugin.cfg")
 
 [input]
 

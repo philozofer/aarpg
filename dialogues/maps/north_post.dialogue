@@ -1,5 +1,54 @@
 ~ start
 
-This will give you food.
+SignPostWood: This will give you food.
+Player: Thank you!
 
+if gem_status == GEM_STATUS.HAS:
+	Player: I collected the 4 gems.
+	- Give to SignPost
+		Player: Here you go.
+		SignPost: Thank you !
+		
+		do Shortcuts.complete_quest("get_gems")
+	- Keep them
+		Player: Not yet, I might buy something.
+		SignPost: I'll wait.
+		
+elif gem_status == GEM_STATUS.GAVE:
+	SignPost: Thanks again for the gems.
+	
+else:
+	if Shortcuts.is_quest_active("get_gems"):
+		Gem count : {{ gem_count }}		
+		
+		do QuestSystem.call_quest_method(1, "update", [])
+		
+		SignPost: How many gems have you found?
+		Player: {{ gem_count }}!	
+		
+	else:
+		SignPost: I sure wish the forest was safer. Can you help ?
+		- Yes
+			do Shortcuts.start_quest("get_gems")
+			do QuestSystem.call_quest_method(1, "update", [])
+		- No
+			=> END
 => END
+
+
+
+#~ quest_start
+#
+#SignPostWood: Will you take on the quest of clearing the woods ?
+#- Yes
+#	SignPostWood: Thank you for helping!
+#	do start_quest("get_gems")
+#	
+#- No
+#	SignPostWood: Comeback whenever.
+#	
+#=> END
+#
+
+
+
