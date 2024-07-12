@@ -26,6 +26,13 @@ signal updated
 ## Emitted by default when [method complete] gets called.
 signal completed
 
+
+func is_item_a_quest_item(item_data: ItemData) -> bool:
+	if item_data == quest_item:		
+		return true
+	return false
+
+
 ## Whether the objective is fulfilled or not.[br]
 ## Must be set to true to be able to complete the quest;[br]
 ## This behaviour can be disabled in [code]ProjectSettings -> QuestSystem -> Config -> Require Objective Completed[/code]
@@ -34,7 +41,6 @@ var objective_completed: bool = false:
 		objective_completed = value
 	get:
 		return objective_completed
-
 
 ## Gets called after QuesySystem' [method update_quest] method.[br][br]
 ##

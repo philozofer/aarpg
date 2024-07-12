@@ -20,14 +20,13 @@ func _physics_process(delta: float) -> void:
 	if collision_info:
 		velocity = velocity.bounce(collision_info.get_normal())
 	velocity -= velocity * delta * 4
-		
+			
 
 func _on_body_entered(b) -> void:
 	if b is Player:
 		if item_data:			
 			if PlayerManager.INVENTORY_DATA.add_item(item_data) == true:
 				item_picked()
-				print("I sent this as a signal_data : ", item_data.name)	
 				QuestSystem.emit_signal("item_picked_up", item_data)
 				
 

@@ -708,9 +708,9 @@ max_amount = 4.0
 [sub_resource type="Resource" id="Resource_p3oge"]
 script = ExtResource("14_ev6j6")
 item = ExtResource("18_x8qv7")
-probability = 80.0
-min_amount = 1
-max_amount = 4.0
+probability = 100.0
+min_amount = 2
+max_amount = 5
 
 [sub_resource type="Animation" id="Animation_vgdqs"]
 length = 0.001
