@@ -10,10 +10,14 @@ class_name Quest
 @export var id: int
 ## The name of the quest
 @export var quest_name: String
+## Item to be gathered if necessary
+@export var quest_item: ItemData
 ## A brief description of the quest
 @export_multiline var quest_description: String
 ## A brief description that outlines what must be done to complete the quest
 @export_multiline var quest_objective: String
+
+
 
 ## Emitted by default when [method start] gets called.
 signal started

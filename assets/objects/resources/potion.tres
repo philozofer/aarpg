@@ -19,5 +19,7 @@ region = Rect2(32, 0, 32, 32)
 script = ExtResource("1_oplsl")
 name = "Health Potion"
 description = "Tonic to recover HP"
+item_type = ""
+quantity = 1
 texture = SubResource("AtlasTexture_lik17")
 effects = Array[Resource("res://scripts/objects/item_effects/item_effect.gd")]([SubResource("Resource_ua8sp")])

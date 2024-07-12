@@ -9,7 +9,9 @@ region = Rect2(0, 0, 32, 32)
 
 [resource]
 script = ExtResource("1_bv5io")
-name = ""
+name = "Gem"
 description = "A valuable stone"
+item_type = ""
+quantity = 1
 texture = SubResource("AtlasTexture_ag48a")
 effects = Array[Resource("res://scripts/objects/item_effects/item_effect.gd")]([])

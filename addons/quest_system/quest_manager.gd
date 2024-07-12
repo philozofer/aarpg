@@ -4,6 +4,8 @@ signal quest_accepted(quest: Quest) # Emitted when a quest gets moved to the Act
 signal quest_completed(quest: Quest) # Emitted when a quest gets moved to the CompletedPool
 signal new_available_quest(quest: Quest) # Emitted when a quest gets added to the AvailablePool
 
+signal item_picked_up(item_data)
+
 const AvailableQuestPool = preload("./available_pool.gd")
 const ActiveQuestPool = preload("./active_pool.gd")
 const CompletedQuestPool = preload("./completed_pool.gd")
@@ -32,9 +34,18 @@ func _init() -> void:
 		var pool_name: String = pool_path.get_file().split(".")[0].to_pascal_case()
 		add_new_pool(pool_path, pool_name)
 
+	
+func _ready():
+	QuestSystem.connect("item_picked_up", _on_item_picked_up)	
+	pass
+	#
+
+func _on_item_picked_up(item_data: ItemData) -> void:
+	print("The QuestSystem got called ! And received : ", item_data.name)
+	pass
+
+
 # Quest API
-
-
 func start_quest(quest: Quest, args: Dictionary = {}) -> Quest:
 	assert(quest != null)
 
@@ -98,6 +109,7 @@ func mark_quest_as_available(quest: Quest) -> void:
 func get_available_quests() -> Array[Quest]:
 	return available.quests
 
+
 func get_active_quests() -> Array[Quest]:
 	return active.quests
 
@@ -107,15 +119,18 @@ func is_quest_available(quest: Quest) -> bool:
 		return true
 	return false
 
+
 func is_quest_active(quest: Quest) -> bool:
 	if active.is_quest_inside(quest):
 		return true
 	return false
 
+
 func is_quest_completed(quest: Quest) -> bool:
 	if completed.is_quest_inside(quest):
 		return true
 	return false
+
 
 func is_quest_in_pool(quest: Quest, pool_name: String) -> bool:
 	if pool_name.is_empty():

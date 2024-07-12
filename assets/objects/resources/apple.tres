@@ -19,5 +19,7 @@ region = Rect2(192, 0, 32, 32)
 script = ExtResource("1_a0gmh")
 name = "Apple"
 description = "Delicious Fruit !"
+item_type = ""
+quantity = 1
 texture = SubResource("AtlasTexture_kvkam")
 effects = Array[Resource("res://scripts/objects/item_effects/item_effect.gd")]([SubResource("Resource_i1abi")])

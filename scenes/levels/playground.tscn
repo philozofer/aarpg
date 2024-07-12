@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dlyj87jvi4ugw"]
+[gd_scene load_steps=24 format=3 uid="uid://dlyj87jvi4ugw"]
 
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_knj71"]
 [ext_resource type="PackedScene" uid="uid://cu3fp0yjpylx1" path="res://assets/tilemaps/grass-01.tscn" id="2_p8hlx"]
@@ -7,12 +7,64 @@
 [ext_resource type="PackedScene" uid="uid://cxmgl43fpgqqx" path="res://scenes/levels/level_transition.tscn" id="5_ilf6u"]
 [ext_resource type="PackedScene" uid="uid://bhcrxni5j5hcs" path="res://scenes/objects/plant.tscn" id="6_jlabv"]
 [ext_resource type="PackedScene" uid="uid://b20y5yotli76r" path="res://scenes/objects/treasure_chest.tscn" id="7_08d6d"]
-[ext_resource type="Resource" uid="uid://bfwcr3xry2cut" path="res://assets/objects/gem.tres" id="9_rnxpl"]
-[ext_resource type="Resource" uid="uid://crnjwdxnw3p3g" path="res://assets/objects/potion.tres" id="9_uojiv"]
-[ext_resource type="Resource" uid="uid://dt75q34pwfel2" path="res://assets/objects/apple.tres" id="9_ydngy"]
+[ext_resource type="AudioStream" uid="uid://bb3kprc5haw1v" path="res://assets/sounds/hp-up.wav" id="8_nosab"]
+[ext_resource type="Script" path="res://scripts/objects/item_effects/item_effect_heal.gd" id="9_vf27v"]
+[ext_resource type="Script" path="res://scripts/inventory/item_data.gd" id="10_moguo"]
+[ext_resource type="Texture2D" uid="uid://c4xiug817xu7j" path="res://assets/objects/items.png" id="11_8x64e"]
 [ext_resource type="PackedScene" uid="uid://bs5cgmjsk2wfb" path="res://scenes/objects/sign_post.tscn" id="11_p08pf"]
 [ext_resource type="PackedScene" uid="uid://dxif0c8fhwv7i" path="res://scenes/characters/interact_with_player.tscn" id="12_6xowk"]
 [ext_resource type="Resource" uid="uid://dsvn2ef44r510" path="res://dialogues/maps/north_post.dialogue" id="14_w6guc"]
+
+[sub_resource type="Resource" id="Resource_ua8sp"]
+script = ExtResource("9_vf27v")
+heal_amount = 2
+audio = ExtResource("8_nosab")
+use_description = ""
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lik17"]
+atlas = ExtResource("11_8x64e")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="Resource" id="Resource_ic34s"]
+script = ExtResource("10_moguo")
+name = "Health Potion"
+description = "Tonic to recover HP"
+item_type = ""
+quantity = 1
+texture = SubResource("AtlasTexture_lik17")
+effects = Array[Resource("res://scripts/objects/item_effects/item_effect.gd")]([SubResource("Resource_ua8sp")])
+
+[sub_resource type="Resource" id="Resource_i1abi"]
+script = ExtResource("9_vf27v")
+heal_amount = 1
+audio = ExtResource("8_nosab")
+use_description = ""
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvkam"]
+atlas = ExtResource("11_8x64e")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="Resource" id="Resource_vbo41"]
+script = ExtResource("10_moguo")
+name = "Apple"
+description = "Delicious Fruit !"
+item_type = ""
+quantity = 1
+texture = SubResource("AtlasTexture_kvkam")
+effects = Array[Resource("res://scripts/objects/item_effects/item_effect.gd")]([SubResource("Resource_i1abi")])
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag48a"]
+atlas = ExtResource("11_8x64e")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="Resource" id="Resource_2q3qe"]
+script = ExtResource("10_moguo")
+name = ""
+description = "A valuable stone"
+item_type = ""
+quantity = 1
+texture = SubResource("AtlasTexture_ag48a")
+effects = Array[Resource("res://scripts/objects/item_effects/item_effect.gd")]([])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3gtj"]
 size = Vector2(33, 22)
@@ -52,17 +104,17 @@ position = Vector2(163, 377)
 
 [node name="TreasureChest" parent="." instance=ExtResource("7_08d6d")]
 position = Vector2(50, 283)
-item_data = ExtResource("9_uojiv")
+item_data = SubResource("Resource_ic34s")
 quantity = 2
 
 [node name="TreasureChest2" parent="." instance=ExtResource("7_08d6d")]
 position = Vector2(-14, 283)
-item_data = ExtResource("9_ydngy")
+item_data = SubResource("Resource_vbo41")
 quantity = 3
 
 [node name="TreasureChest3" parent="." instance=ExtResource("7_08d6d")]
 position = Vector2(-82, 283)
-item_data = ExtResource("9_rnxpl")
+item_data = SubResource("Resource_2q3qe")
 quantity = 10
 
 [node name="SignPost" parent="." instance=ExtResource("11_p08pf")]

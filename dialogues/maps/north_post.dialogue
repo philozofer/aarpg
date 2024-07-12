@@ -34,21 +34,3 @@ else:
 		- No
 			=> END
 => END
-
-
-
-#~ quest_start
-#
-#SignPostWood: Will you take on the quest of clearing the woods ?
-#- Yes
-#	SignPostWood: Thank you for helping!
-#	do start_quest("get_gems")
-#	
-#- No
-#	SignPostWood: Comeback whenever.
-#	
-#=> END
-#
-
-
-

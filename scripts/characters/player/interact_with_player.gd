@@ -10,20 +10,7 @@ func _ready():
 	interaction.area_exited.connect(_on_area_exit)
 
 func player_interact() -> void:
-	DialogueManager.show_dialogue_balloon(dialogue_resource, dialogue_start)
-	
-	#var quest = quest_resource
-	##print(quest)
-	#if quest and quest.status != "complete":
-		### Check quest conditions here, if met:
-		#if check_quest_conditions(quest):
-			#DialogueManager.show_dialogue_balloon(dialogue_resource, quest_start)
-		#else:
-			# Handle case where quest conditions are not met
-			#pass  # Or do something else
-				
-	#else:
-		#DialogueManager.show_dialogue_balloon(dialogue_resource, dialogue_start)	
+	DialogueManager.show_dialogue_balloon(dialogue_resource, dialogue_start)	
 
 func check_quest_conditions(_quest: Quest) -> bool:
 	# Implement your quest condition checks here
