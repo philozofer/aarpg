@@ -42,12 +42,17 @@ func _ready():
 
 func _on_item_picked_up(item_data: ItemData) -> void:
 	# Iterate through active quests
-	for quest in active.quests:
-		# Check if the item is required for any active quest
-		if quest.is_item_a_quest_item(item_data):
+
 			
-			print("I need this %s for an active quest" % item_data.name)			
-			QuestSystem.call_quest_method(1, "update", [])
+	for quest in active.quests:
+		print(quest.quest_name)
+		print("I need this %s for an active quest" % item_data.name)			
+		QuestSystem.call_quest_method(quest.id, "update", [])
+		# Check if the item is required for any active quest
+		#if quest.is_item_a_quest_item(item_data):
+			#if quest.quest_item_count < quest.quest_item_needed:
+			#print("I need this %s for an active quest" % item_data.name)			
+			#QuestSystem.call_quest_method(1, "update", [])
 			
 			#if QuestStates.gem_count += 1
 			# Update the quest's progress
@@ -57,11 +62,8 @@ func _on_item_picked_up(item_data: ItemData) -> void:
 				#active.remove_quest(quest)
 				#completed.add_quest(quest)
 				#emit_signal("quest_completed", quest)
-			pass
-	pass
-
-func is_needed_quest() -> void:
-	pass
+		#pass
+		pass
 
 
 # Quest API

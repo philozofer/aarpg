@@ -17,18 +17,17 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Messenger="res://autoloads/global_events_manager.gd"
 LevelManager="*res://autoloads/global_level_manager.gd"
 PlayerHud="*res://scenes/ui/player_hud.tscn"
 PlayerManager="*res://autoloads/global_player_manager.gd"
 SceneTransition="*res://scenes/ui/scene_transition.tscn"
 SaveManager="*res://autoloads/global_save_manager.gd"
+QuestMenu="*res://scenes/ui/quest_menu/quest_menu.tscn"
 PauseMenu="*res://scenes/ui/pause_menu.tscn"
 Shortcuts="*res://autoloads/global_quests_shortcuts.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 QuestStates="*res://autoloads/global_quests_states.gd"
 QuestSystem="*res://addons/quest_system/quest_manager.gd"
-QuestManager="res://autoloads/global_quests_manager.gd"
 
 [dialogue_manager]
 
@@ -103,7 +102,7 @@ interact={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":71,"key_label":0,"unicode":103,"echo":false,"script":null)
 ]
 }
-quests_menu={
+quests={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194306,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
@@ -111,7 +110,7 @@ quests_menu={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogues/maps/north_post.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/maps/north_post.dialogue", "res://dialogues/maps/south_post.dialogue")
 
 [layer_names]
 

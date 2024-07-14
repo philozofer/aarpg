@@ -12,12 +12,24 @@ class_name Quest
 @export var quest_name: String
 ## Item to be gathered if necessary
 @export var quest_item: ItemData
+## Qty of Item to be gathered if necessary
+@export var quest_item_needed: int = 0
+## Current Count of QuestItem gathered
+var quest_item_count: int = 0
+
 ## A brief description of the quest
 @export_multiline var quest_description: String
 ## A brief description that outlines what must be done to complete the quest
 @export_multiline var quest_objective: String
 
-
+enum QuestStatus {
+	NOT_AVAILABLE,
+	AVAILABLE,
+	ACTIVE,
+	TO_RETURN,
+	COMPLETED,	
+}
+@export var quest_status: QuestStatus = QuestStatus.NOT_AVAILABLE
 
 ## Emitted by default when [method start] gets called.
 signal started
@@ -28,6 +40,7 @@ signal completed
 
 
 func is_item_a_quest_item(item_data: ItemData) -> bool:
+	print(item_data)
 	if item_data == quest_item:		
 		return true
 	return false

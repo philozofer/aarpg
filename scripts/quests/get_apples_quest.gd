@@ -18,7 +18,7 @@ func update(_data: Dictionary = {}):
 		quest_status = QuestStatus.TO_RETURN
 		# The quest objective will automatically be set to true when calling update
 		objective_completed = true		
-		Shortcuts.complete_quest("get_gems")
+		Shortcuts.complete_quest("get_apples")
 		#QuestSystem.active.remove_quest(self) 
 		QuestSystem.completed.add_quest(self)
 		QuestSystem.emit_signal("quest_completed", self)

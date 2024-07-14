@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://c7b7nimk4432g"
+path="res://.godot/imported/south_post.dialogue-3015f7b6bff367092fbdc29ace73b38d.tres"
+
+[deps]
+
+source_file="res://dialogues/maps/south_post.dialogue"
+dest_files=["res://.godot/imported/south_post.dialogue-3015f7b6bff367092fbdc29ace73b38d.tres"]
+
+[params]
+
+defaults=true

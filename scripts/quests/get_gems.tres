@@ -5,9 +5,10 @@
 
 [resource]
 script = ExtResource("1_2tnq2")
-gems_needed = 3
 id = 1
 quest_name = "Get Gems"
 quest_item = ExtResource("1_d2ad6")
-quest_description = ""
-quest_objective = ""
+quest_item_needed = 2
+quest_description = "Clear the woods."
+quest_objective = "Collect gems."
+quest_status = 0
