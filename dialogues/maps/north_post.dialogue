@@ -1,7 +1,13 @@
 ~ start
 
-SignPostWood: This will give you food.
-Player: Thank you!
+SignPostWood: The Village needs help !
+#Player: Thank you!
+
+
+#SignPost: Can you help clear the woods ?
+#- Yes
+#	do Shortcuts.start_quest("get_gems")
+#- No
 
 if gem_status == GEM_STATUS.HAS:
 	Player: I collected the 3 gems.
@@ -23,7 +29,7 @@ else:
 		Player: {{ gem_count }}!	
 		
 	else:
-		SignPost: I sure wish the forest was safer. Can you help ?
+		SignPost: Can you help clear the woods ?
 		- Yes
 			do Shortcuts.start_quest("get_gems")
 		- No
