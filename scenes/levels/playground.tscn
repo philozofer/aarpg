@@ -91,6 +91,7 @@ position = Vector2(126, 291)
 
 [node name="LevelTransition" parent="." instance=ExtResource("5_ilf6u")]
 position = Vector2(608, 192)
+level = "res://scenes/levels/Area2/leve2.tscn"
 
 [node name="LevelTransition2" parent="." instance=ExtResource("5_ilf6u")]
 position = Vector2(224, 448)
