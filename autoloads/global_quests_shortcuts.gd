@@ -22,7 +22,6 @@ func is_quest_completed(quest_name: String) -> bool:
 	if quest == null: return false
 	return QuestSystem.is_quest_completed(quest)
 
-
 func is_quest_active(quest_name: String) -> bool:
 	var quest: Quest = ResourceLoader.load(QUEST_PATH % quest_name, "Quest")
 	if quest == null: return false

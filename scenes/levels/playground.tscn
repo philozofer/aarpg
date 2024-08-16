@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dlyj87jvi4ugw"]
+[gd_scene load_steps=26 format=3 uid="uid://dlyj87jvi4ugw"]
 
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_knj71"]
 [ext_resource type="PackedScene" uid="uid://cu3fp0yjpylx1" path="res://assets/tilemaps/grass-01.tscn" id="2_p8hlx"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cxmgl43fpgqqx" path="res://scenes/levels/level_transition.tscn" id="5_ilf6u"]
 [ext_resource type="PackedScene" uid="uid://bhcrxni5j5hcs" path="res://scenes/objects/plant.tscn" id="6_jlabv"]
 [ext_resource type="PackedScene" uid="uid://b20y5yotli76r" path="res://scenes/objects/treasure_chest.tscn" id="7_08d6d"]
+[ext_resource type="Script" path="res://scripts/objects/item_effects/item_effect.gd" id="8_5qlgl"]
 [ext_resource type="AudioStream" uid="uid://bb3kprc5haw1v" path="res://assets/sounds/hp-up.wav" id="8_nosab"]
 [ext_resource type="Script" path="res://scripts/objects/item_effects/item_effect_heal.gd" id="9_vf27v"]
 [ext_resource type="Script" path="res://scripts/inventory/item_data.gd" id="10_moguo"]
@@ -33,7 +34,7 @@ description = "Tonic to recover HP"
 item_type = ""
 quantity = 1
 texture = SubResource("AtlasTexture_lik17")
-effects = Array[Resource("res://scripts/objects/item_effects/item_effect.gd")]([SubResource("Resource_ua8sp")])
+effects = Array[ExtResource("8_5qlgl")]([SubResource("Resource_ua8sp")])
 
 [sub_resource type="Resource" id="Resource_i1abi"]
 script = ExtResource("9_vf27v")
@@ -52,7 +53,7 @@ description = "Delicious Fruit !"
 item_type = ""
 quantity = 1
 texture = SubResource("AtlasTexture_kvkam")
-effects = Array[Resource("res://scripts/objects/item_effects/item_effect.gd")]([SubResource("Resource_i1abi")])
+effects = Array[ExtResource("8_5qlgl")]([SubResource("Resource_i1abi")])
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ag48a"]
 atlas = ExtResource("11_8x64e")
@@ -65,7 +66,7 @@ description = "A valuable stone"
 item_type = ""
 quantity = 1
 texture = SubResource("AtlasTexture_ag48a")
-effects = Array[Resource("res://scripts/objects/item_effects/item_effect.gd")]([])
+effects = Array[ExtResource("8_5qlgl")]([])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3gtj"]
 size = Vector2(33, 22)

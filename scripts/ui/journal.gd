@@ -10,7 +10,8 @@ func _ready():
 	pass
 
 func update_journal() -> void:	
-	quest_list.clear() 	
+	quest_list.clear() 
+	quest_description.text = ""
 		
 	if QuestSystem.get_active_quests().size() > 0:			
 		var active_quests = QuestSystem.get_active_quests()
@@ -25,5 +26,3 @@ func _on_quest_list_item_selected(_index: int) -> void:
 	
 func update_quest_description(new_text: String) -> void:
 	quest_description.text = new_text
-
-

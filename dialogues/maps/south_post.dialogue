@@ -1,7 +1,7 @@
 ~ start
 
 if gem_status == GEM_STATUS.HAS:
-	Player: I collected the 3 gems.
+	Player: I collected the gems.
 	- Give to SignPost
 		Player: Here you go.
 		SignPost: Thank you !

@@ -45,4 +45,3 @@ func update_texture() -> void:
 	if item_data and sprite:
 		sprite.texture = item_data.texture
 	pass
-

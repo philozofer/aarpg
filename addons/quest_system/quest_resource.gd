@@ -31,6 +31,11 @@ enum QuestStatus {
 }
 @export var quest_status: QuestStatus = QuestStatus.NOT_AVAILABLE
 
+var current_quest = [
+	id, quest_name, quest_item, quest_item_needed,
+	quest_item_count
+]
+
 ## Emitted by default when [method start] gets called.
 signal started
 ## Emitted by default when [method update] gets called.
@@ -55,22 +60,22 @@ var objective_completed: bool = false:
 	get:
 		return objective_completed
 
-## Gets called after QuesySystem' [method update_quest] method.[br][br]
+## Gets called after QuestSystem' [method update_quest] method.[br][br]
 ##
 ## By default, it emits the [signal updated] signal.
 func update(_args: Dictionary = {}) -> void:
 	updated.emit()
 
 
-## Gets called after QuesySystem' [method start_quest] method.[br]
+## Gets called after QuestSystem' [method start_quest] method.[br]
 ## Additional data may be passed from the optional [param _args] parameter.[br][br]
 ##
 ## By default, it emits the [signal started] signal.
 func start(_args: Dictionary = {}) -> void:
 	started.emit()
+	PlayerManager.INVENTORY_DATA.slots.any
 
-
-## Gets called after QuesySystem' [method complete_quest] method.[br]
+## Gets called after QuestSystem' [method complete_quest] method.[br]
 ## Make sure to set [member objective_completed] to true or disable its requirement in ProjectSettings,[br]
 ## or this method won't be called.[br][br]
 ##

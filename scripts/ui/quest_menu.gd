@@ -31,5 +31,3 @@ func hide_quests_menu() -> void:
 	visible = false
 	is_paused = false
 	quests_menu_hidden.emit()
-
-

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=7 format=3 uid="uid://dt75q34pwfel2"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=8 format=3 uid="uid://dt75q34pwfel2"]
 
 [ext_resource type="Script" path="res://scripts/inventory/item_data.gd" id="1_a0gmh"]
+[ext_resource type="Script" path="res://scripts/objects/item_effects/item_effect.gd" id="1_a34n1"]
 [ext_resource type="AudioStream" uid="uid://bb3kprc5haw1v" path="res://assets/sounds/hp-up.wav" id="1_mu7u4"]
 [ext_resource type="Texture2D" uid="uid://c4xiug817xu7j" path="res://assets/objects/items.png" id="2_1kcyf"]
 [ext_resource type="Script" path="res://scripts/objects/item_effects/item_effect_heal.gd" id="2_w1iqb"]
@@ -22,4 +23,4 @@ description = "Delicious Fruit !"
 item_type = ""
 quantity = 1
 texture = SubResource("AtlasTexture_kvkam")
-effects = Array[Resource("res://scripts/objects/item_effects/item_effect.gd")]([SubResource("Resource_i1abi")])
+effects = Array[ExtResource("1_a34n1")]([SubResource("Resource_i1abi")])
