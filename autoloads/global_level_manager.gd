@@ -1,11 +1,8 @@
 extends Node
 
-
 signal level_load_started
 signal level_loaded
 signal TileMapBoundsChanged(bounds : Array[Vector2])
-
-
 
 var current_tilemap_bounds: Array[Vector2]
 var target_transition: String

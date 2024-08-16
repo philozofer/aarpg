@@ -1,0 +1,37 @@
+~ start
+
+SignPostWood: The Village needs help !
+#Player: Thank you!
+
+
+#SignPost: Can you help clear the woods ?
+#- Yes
+#	do Shortcuts.start_quest("get_gems")
+#- No
+
+if gem_status == GEM_STATUS.HAS:
+	Player: I collected the 3 gems.
+	- Give to SignPost
+		Player: Here you go.
+		SignPost: Thank you !
+				
+		do Shortcuts.complete_quest("get_gems")
+	- Keep them
+		Player: Not yet, I might buy something.
+		SignPost: I'll wait.
+		
+elif gem_status == GEM_STATUS.GAVE:
+	SignPost: Thanks again for the gems.
+	
+else:
+	if Shortcuts.is_quest_active("get_gems"):		
+		SignPost: How many gems have you found?
+		Player: {{ gem_count }}!	
+		
+	else:
+		SignPost: Can you help clear the woods ?
+		- Yes
+			do Shortcuts.start_quest("get_gems")
+		- No
+			=> END
+=> END

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://do8rav11btwrc"]
+
+[ext_resource type="Resource" uid="uid://dt75q34pwfel2" path="res://assets/objects/resources/apple.tres" id="1_2jrv1"]
+[ext_resource type="Script" path="res://scripts/quests/get_apples_quest.gd" id="1_2kpqx"]
+
+[resource]
+script = ExtResource("1_2kpqx")
+id = 2
+quest_name = "Get Apples"
+quest_item = ExtResource("1_2jrv1")
+quest_item_needed = 5
+quest_description = "Gather apples for the village."
+quest_objective = "Bring 5 apples."
+quest_status = 0

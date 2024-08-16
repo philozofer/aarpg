@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://hym2qot6wwmo"]
+
+[ext_resource type="Script" path="res://scripts/quests/get_gems_quest.gd" id="1_2tnq2"]
+[ext_resource type="Resource" uid="uid://bfwcr3xry2cut" path="res://assets/objects/resources/gem.tres" id="1_d2ad6"]
+
+[resource]
+script = ExtResource("1_2tnq2")
+id = 1
+quest_name = "Get Gems"
+quest_item = ExtResource("1_d2ad6")
+quest_item_needed = 3
+quest_description = "Clear the woods."
+quest_objective = "Collect gems from Slimes."
+quest_status = 0

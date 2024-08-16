@@ -13,9 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://oyqf66m4jgpo" path="res://assets/effects/DestroySmoke.png" id="9_473bq"]
 [ext_resource type="Script" path="res://scripts/characters/enemies/states/enemy_state_stun.gd" id="11_yt2jj"]
 [ext_resource type="Script" path="res://scripts/characters/enemies/states/enemy_state_destroy.gd" id="12_rvlrh"]
-[ext_resource type="Resource" uid="uid://dt75q34pwfel2" path="res://assets/objects/apple.tres" id="13_32dfn"]
+[ext_resource type="Resource" uid="uid://dt75q34pwfel2" path="res://assets/objects/resources/apple.tres" id="13_76i2s"]
 [ext_resource type="Script" path="res://scripts/objects/drop_data.gd" id="14_ev6j6"]
-[ext_resource type="Resource" uid="uid://bfwcr3xry2cut" path="res://assets/objects/gem.tres" id="15_w2sxf"]
+[ext_resource type="Resource" uid="uid://bfwcr3xry2cut" path="res://assets/objects/resources/gem.tres" id="18_x8qv7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ryhgo"]
 radius = 13.0384
@@ -700,17 +700,17 @@ _data = {
 
 [sub_resource type="Resource" id="Resource_xo2pc"]
 script = ExtResource("14_ev6j6")
-item = ExtResource("13_32dfn")
+item = ExtResource("13_76i2s")
 probability = 100.0
-min_amount = 0.0
+min_amount = 1
 max_amount = 4.0
 
 [sub_resource type="Resource" id="Resource_p3oge"]
 script = ExtResource("14_ev6j6")
-item = ExtResource("15_w2sxf")
-probability = 50.0
-min_amount = 0.0
-max_amount = 4.0
+item = ExtResource("18_x8qv7")
+probability = 100.0
+min_amount = 2
+max_amount = 5
 
 [sub_resource type="Animation" id="Animation_vgdqs"]
 length = 0.001

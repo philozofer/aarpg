@@ -2,7 +2,6 @@ class_name EnemyStateDestroy extends EnemyState
 
 const PICKUP = preload("res://scenes/objects/item_pickup.tscn")
 
-
 @export var anim_name: String = "destroy"
 @export var knockback_speed: float = 200.0
 @export var decelerate_speed: float = 10.0
@@ -74,5 +73,5 @@ func drop_items() -> void:
 			drop.item_data = drops[i].item
 			enemy.get_parent().call_deferred("add_child", drop)
 			drop.global_position = enemy.global_position
-			drop.velocity = enemy.velocity.rotated(randf_range(-1.5, 1.5) * randf_range(0.9, 1.5))
+			drop.velocity = enemy.velocity.rotated(randf_range(-1.0, 1.0) * randf_range(0.9, 1.3))
 	pass

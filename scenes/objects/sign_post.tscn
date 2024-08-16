@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs5cgmjsk2wfb"]
+
+[ext_resource type="Texture2D" uid="uid://c3h013bc2rns3" path="res://assets/tilemaps/Outside.png" id="1_kqvon"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pups"]
+atlas = ExtResource("1_kqvon")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfwdt"]
+size = Vector2(24, 14)
+
+[node name="SignPost" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_2pups")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_bfwdt")

@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://scripts/ui/pause_menu.gd" id="1_kw02c"]
 [ext_resource type="Texture2D" uid="uid://c4xiug817xu7j" path="res://assets/objects/items.png" id="2_qgakb"]
 [ext_resource type="Script" path="res://scripts/inventory/inventory_ui.gd" id="3_mjtgd"]
-[ext_resource type="PackedScene" uid="uid://blywydhtdg4m5" path="res://scenes/ui/inventory/inventory_slot.tscn" id="3_ukxen"]
-[ext_resource type="Resource" uid="uid://dedtekgx6l81u" path="res://scenes/ui/inventory/player_inventory.tres" id="4_wsr6x"]
+[ext_resource type="PackedScene" uid="uid://blywydhtdg4m5" path="res://scenes/ui/inventory_menu/inventory_slot.tscn" id="3_ukxen"]
+[ext_resource type="Resource" uid="uid://dedtekgx6l81u" path="res://scenes/ui/inventory_menu/player_inventory.tres" id="4_wsr6x"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jjcmj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mprcs"]
 atlas = ExtResource("2_qgakb")
 region = Rect2(96, 0, 32, 32)
 
@@ -15,7 +15,7 @@ content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
-texture = SubResource("AtlasTexture_jjcmj")
+texture = SubResource("AtlasTexture_mprcs")
 texture_margin_left = 14.0
 texture_margin_top = 14.0
 texture_margin_right = 14.0

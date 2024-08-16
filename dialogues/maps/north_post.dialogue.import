@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dsvn2ef44r510"
+path="res://.godot/imported/north_post.dialogue-8156e03b45a156c2ec5ecce4cf98b716.tres"
+
+[deps]
+
+source_file="res://dialogues/maps/north_post.dialogue"
+dest_files=["res://.godot/imported/north_post.dialogue-8156e03b45a156c2ec5ecce4cf98b716.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,28 @@
+~ start
+
+if gem_status == GEM_STATUS.HAS:
+	Player: I collected the gems.
+	- Give to SignPost
+		Player: Here you go.
+		SignPost: Thank you !
+				
+		do Shortcuts.complete_quest("get_apples")
+	- Keep them
+		Player: Not yet, I might buy something.
+		SignPost: I'll wait.
+		
+elif gem_status == GEM_STATUS.GAVE:
+	SignPost: Thanks again for the gems.
+	
+else:
+	if Shortcuts.is_quest_active("get_apples"):		
+		SignPost: How many gems have you found?
+		Player: {{ gem_count }}!
+		
+	else:
+		SignPost: Can you help gather apples ?
+		- Yes
+			do Shortcuts.start_quest("get_apples")
+		- No
+			=> END
+=> END
